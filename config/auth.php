@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -111,5 +116,5 @@ return [
     */
 
     'password_timeout' => 10800,
-
+    'resend_verification_code_time_diff' => env('RESEND_VERIFICATION_CODE_TIME_DIFF', 60),
 ];

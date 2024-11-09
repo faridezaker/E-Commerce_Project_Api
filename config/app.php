@@ -168,6 +168,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \Zaker\User\Providers\UserServiceProvider::class,
+        \Zaker\User\Providers\AuthServiceProvider::class
     ])->toArray(),
 
     /*

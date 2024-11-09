@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Laravel\Passport\Http\Controllers\AccessTokenController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+//Route::post('/oauth/token', [AccessTokenController::class, 'issueToken'])->name('passport.token');
+Route::namespace('Laravel\Passport\Http\Controllers')->group(function () {
+    Route::post('login', [AccessTokenController::class, 'issueToken']);
 });
