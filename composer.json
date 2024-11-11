@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "darkaonline/l5-swagger": "^8.6",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/passport": "12.3.0",
@@ -23,14 +24,11 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Zaker\\User\\": "modules/Zaker/User/",
-            "Zaker\\Core\\": "modules/Zaker/Core/",
-            "Zaker\\Category\\": "modules/Zaker/Category/"
+            "App\\": "app/"
         },
 
         "files": [
-            "modules/Zaker/User/Helpers/helper.php"
+            "app/helper.php"
         ]
     },
     "autoload-dev": {

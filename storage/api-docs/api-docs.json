@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api": {},
+        "/api/categories": {
+            "get": {
+                "tags": [
+                    "categories Page"
+                ],
+                "description": "get products page data",
+                "operationId": "a784ac88863d665d4c6101323df688f3",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/categories/store": {
+            "get": {
+                "tags": [
+                    "categories Page"
+                ],
+                "description": "get fffffffffff",
+                "operationId": "91f374d93b2e90e0cbeb353431fb3c06",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "categories Page",
+            "description": "categories Page"
+        }
+    ]
+}
