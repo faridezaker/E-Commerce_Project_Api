@@ -28,7 +28,7 @@ use App\Http\Controllers\AdminPanel\Auth\PasswordResetController;
 Route::namespace('Laravel\Passport\Http\Controllers')->group(function () {
     Route::post('login', [AccessTokenController::class, 'issueToken']);
 });
-Route::post('api/register',[AuthController::class,'register']);
+Route::post('register',[AuthController::class,'register']);
 
 Route::group(['middleware' => 'auth:api', 'prefix' => 'api'], function () {
     Route::post('verify_code', [AuthController::class, 'registerVerify']);
@@ -37,11 +37,7 @@ Route::group(['middleware' => 'auth:api', 'prefix' => 'api'], function () {
     Route::post('new_password', [PasswordResetController::class, 'NewPassword']);
 });
 
-//Route::group(["namespace"=>'Zaker\Category\Http\Controllers','middleware'=>['web']],function ($router){
-//Route::group(['middleware' => 'auth:api', 'prefix' => 'api'], function () {
-//    Route::get('/dashboard', function () {
-//        return view('dashboard');
-//    })->middleware(['auth', 'verified'])->name('dashboard');
+//Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('categories',\App\Http\Controllers\AdminPanel\CategoryController::class);
-
+Route::apiResource('roles',\App\Http\Controllers\AdminPanel\RolePermissionController::class);
 //});

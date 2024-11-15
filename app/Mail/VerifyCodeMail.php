@@ -37,7 +37,7 @@ class VerifyCodeMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'User::mail.verify-code-mail',
+            markdown: 'mail.verify-code-mail',
         );
     }
 

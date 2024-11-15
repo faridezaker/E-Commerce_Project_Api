@@ -1,20 +1,17 @@
 <?php
 
-namespace App\Http\Requests\Category;
+namespace App\Http\Requests\Role;
 
 use Illuminate\Foundation\Http\FormRequest;
-use PHPUnit\TextUI\Output\Default\UnexpectedOutputPrinter;
 
-class CategoryRequest extends FormRequest
+class UpdateRoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        //TODO:check
-        return true;
-        //return auth()->check() == true;
+        return false;
     }
 
     /**
@@ -25,9 +22,7 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:190|regex:/^[a-zA-Z\s\-]+$/u',
-            'slug' => 'required|string|max:190|regex:/^[a-zA-Z\-]+$/u',
-            'parent_id' => 'nullable|numeric|exists:categories,id',
+            //
         ];
     }
 }

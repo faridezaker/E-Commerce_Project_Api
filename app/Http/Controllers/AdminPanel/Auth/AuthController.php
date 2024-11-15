@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\VerifyCodeRequest;
 use App\Models\User;
 use App\Services\VerifyCodeService;
@@ -18,7 +19,7 @@ class AuthController extends Controller
 //        $this->repo = $repo;
 //    }
 
-    public function register(\App\Http\Requests\Auth\RegisterRequest $request)
+    public function register(RegisterRequest $request)
     {
 //        $field = $request->getFieldName();
 //        $value = $request->getFieldValue();

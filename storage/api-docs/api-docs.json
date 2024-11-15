@@ -9,10 +9,153 @@
         "/api/categories": {
             "get": {
                 "tags": [
-                    "categories Page"
+                    "categories"
                 ],
-                "description": "get products page data",
+                "description": "show categories",
                 "operationId": "a784ac88863d665d4c6101323df688f3",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "categories"
+                ],
+                "description": "save category",
+                "operationId": "8bf3e2c33bb499d3a20f6364c0bdf63e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "parent_id": {
+                                        "description": "parent id",
+                                        "type": "integer"
+                                    },
+                                    "title": {
+                                        "description": "title",
+                                        "type": "string"
+                                    },
+                                    "slug": {
+                                        "description": "slug",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data saved",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/categories/{id}": {
+            "get": {
+                "tags": [
+                    "categories"
+                ],
+                "description": "get category details data by category id",
+                "operationId": "478ad1ca0876f8eeb4b30d1abfa93b94",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "categories"
+                ],
+                "description": "update category",
+                "operationId": "1b4c43b3468ebd5321b1fbabe34f7e9e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "parent_id": {
+                                        "description": "parent id",
+                                        "type": "integer"
+                                    },
+                                    "title": {
+                                        "description": "title",
+                                        "type": "string"
+                                    },
+                                    "slug": {
+                                        "description": "slug",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data saved",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "categories"
+                ],
+                "description": "get category details data by category id",
+                "operationId": "a7e1dc69b3dcbce0686836a3f3fadeb4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "category id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -23,13 +166,79 @@
                 }
             }
         },
-        "/api/categories/store": {
+        "/api/roles": {
             "get": {
                 "tags": [
-                    "categories Page"
+                    "Roles and Permissions"
                 ],
-                "description": "get fffffffffff",
-                "operationId": "91f374d93b2e90e0cbeb353431fb3c06",
+                "description": "show rolepermission",
+                "operationId": "cdd693872c8e5926b4f688db788c2fef",
+                "responses": {
+                    "200": {
+                        "description": "Its Ok",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Roles and Permissions"
+                ],
+                "description": "save role and permission",
+                "operationId": "7c1ecbf5e320edbe031b59d62b07fb4f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "name of the role",
+                                        "type": "string"
+                                    },
+                                    "permissions[]": {
+                                        "description": "permissions array",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data saved",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/roles/{id}": {
+            "get": {
+                "tags": [
+                    "Roles and Permissions"
+                ],
+                "description": "get category details data by category id",
+                "operationId": "fa3ea5cadf2d44493131c84164d18438",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "role id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Its Ok",
@@ -43,8 +252,12 @@
     },
     "tags": [
         {
-            "name": "categories Page",
-            "description": "categories Page"
+            "name": "categories",
+            "description": "categories"
+        },
+        {
+            "name": "Roles and Permissions",
+            "description": "Roles and Permissions"
         }
     ]
 }

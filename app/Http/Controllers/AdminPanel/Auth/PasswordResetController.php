@@ -9,15 +9,15 @@ use App\Http\Requests\Auth\SendResetPasswordVerifyCodeRequest;
 use App\Services\UserService;
 use App\Services\VerifyCodeService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Zaker\User\Repositories\UserInterface;
+//use Zaker\User\Repositories\UserInterface;
 
 class PasswordResetController extends Controller
 {
     public $repo;
-    public function __construct(UserInterface $repo)
-    {
-        $this->repo = $repo;
-    }
+//    public function __construct(UserInterface $repo)
+//    {
+//        $this->repo = $repo;
+//    }
     public function passwordResetCode(SendResetPasswordVerifyCodeRequest $request)
     {
         $user = $this->repo->findBy(['email'=>$request->email]);
